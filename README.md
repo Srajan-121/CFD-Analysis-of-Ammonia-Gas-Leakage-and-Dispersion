@@ -149,12 +149,13 @@ Post-processing and visualization
 Ammonia-Leak-CFD
 │
 ├── geometry
-│   └── room_model.step
+│   └── Diffusion.step
+│   └── Leakage.step
 │
-├── images
-│   ├── velocity_field.png
-│   ├── concentration_contour.png
-│   ├── plume_evolution.png
+├── images & animations
+│   ├── chart.png
+│   ├── image.png
+│   ├── result.mp4
 │
 ├── data
 │   └── probe_concentration.csv
