@@ -26,16 +26,20 @@ The simulation domain represents a simplified industrial room.
 **Room dimensions**
 
 ```
-10 m × 6 m × 4 m
+10 m × 6 m × 4 m in initial runs
+30 m × 15 m × 10 m in later runs
 ```
 
 Components included in the model:
 
 - Industrial room enclosure  
 - Cylindrical obstacle representing equipment  
-- Pipeline leak opening on the wall  
+- Pipeline leak opening on the wall
+The geometry was created in **Onshape CAD** and exported for simulation.
+In later runs,
+- Complex Industrial equipment system, including a series of standing flat and dome shaped reactos, a horizontal reactor bed, heat exchangers and a network of pipelines is added
+- The geometry was coded on OpenSCAD and exported.
 
-The geometry was created in **Onshape CAD** and exported to SimScale for simulation.
 
 ---
 
@@ -63,7 +67,8 @@ Ammonia concentration was modeled using a **passive scalar transport equation**,
 Leak velocity:
 
 ```
-30 m/s
+30 m/s in inital runs
+8 m/s in industrial room runs
 ```
 
 Outlet pressure:
@@ -91,7 +96,7 @@ Ammonia concentration at leak:
 | Parameter | Value |
 |--------|--------|
 | Simulation type | Transient |
-| Total simulation time | 100 s |
+| Total simulation time | 100 s/ 150 s |
 | Time step | 0.2 s |
 | Turbulence model | k-ω SST |
 
@@ -106,7 +111,7 @@ The simulation provides insights into:
 - Formation of the **ammonia jet plume** from the leak
 - **Interaction of the plume with the cylindrical obstacle**
 - Development of **recirculation regions**
-- Mixing and dispersion of ammonia within the room
+- Mixing and dispersion of ammonia within a realistic industrial room
 
 Key visualizations generated include:
 
@@ -130,7 +135,7 @@ These results help illustrate how **gas dispersion evolves inside enclosed indus
 ## Project Workflow
 
 ```
-Onshape (CAD modeling)
+Onshape/OpenSCAD (CAD modeling)
         ↓
 Geometry export
         ↓
@@ -151,14 +156,16 @@ Ammonia-Leak-CFD
 ├── geometry
 │   └── Diffusion.step
 │   └── Leakage.step
+│   └── idr simplified 2.stl
 │
 ├── images & animations
 │   ├── chart.png
 │   ├── image.png
-│   ├── result.mp4
+│   ├── result.mp4 (1)(2)(3)(4)
 │
 ├── data
 │   └── probe_concentration.csv
+│   └── chart.jpeg
 │
 └── presentation
     └── ammonia_leak_simulation.pdf
@@ -173,7 +180,6 @@ The full CFD solver output (~11 GB) is not included due to repository size limit
 
 Possible extensions of this project include:
 
-- Using a **detailed industrial CAD model** instead of a simplified room geometry  
 - Incorporating **thermal effects and temperature-driven buoyancy**  
 - Studying **different leakage sizes and pressures**  
 - Investigating the impact of **ventilation systems** on gas dispersion  
@@ -182,8 +188,8 @@ Possible extensions of this project include:
 
 ## Tools Used
 
-- **Onshape** – CAD modeling  
-- **SimScale** – CFD simulation platform  
+- **Onshape** **OpenSCAD**  – CAD modeling  
+- **SimScale** **Ansys** – CFD simulation platform  
 - **CFD turbulence modeling (k-ω SST)**  
 
 ---
@@ -191,3 +197,9 @@ Possible extensions of this project include:
 ## Author
 
 **Srajan Mishra**  
+
+---
+
+##Project Link
+
+https://www.simscale.com/workbench/?pid=8958331965289570796
